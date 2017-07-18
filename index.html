@@ -13,12 +13,12 @@
 <body>
    <div id="root"></div>
     <script type="text/babel">
-        function HeloWorld (){
-            return <h1>This is functional component</h1>
+        function HeloWorld (props){
+            return <h1>This is functional component {props.message}</h1>
         }
 
         ReactDOM.render(
-            <HeloWorld/>,
+            <HeloWorld message="from message"/>,
             document.getElementById("root")
         );
         </script>
