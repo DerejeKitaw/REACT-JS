@@ -13,47 +13,26 @@
 <body>
    <div id="root"></div>
     <script type="text/babel">
-        //ShoppingTitle functional component
-        function ShoppingTitle(props){
-            return (
-                <div>
-                    <h1>{props.title}</h1>
-                    <h2>Total Number of Items: {props.numItems}</h2>
-                </div>
-            )
-        }
-        //ListItem functional component
-        function ListItem(props){
-            return <li>{props.item}</li>
-        }
-        //ShoppingList functional component
-        function ShoppingList(props){
-            return (
-                <div>
-                    <h3>{props.header}</h3>    
-                    <ol>
-                        <ListItem item ={props.items[0]}/>
-                        <ListItem item ={props.items[1]}/>
-                        <ListItem item ={props.items[2]}/>
-                    </ol>
-                </div>
-            )
-        }
-        //ShoppingApp functional component
-        function ShoppingApp(props){
-            return (
-                <div>
-                        <ShoppingTitle title ="My Shopping List"/>
-                        <ShoppingList header="Food" items={["Apple","Bread","Cheese"]}/>
-                        <ShoppingList header="Clothes" items={["Shirt","Pants","Hat"]}/>
-                        <ShoppingList header="Supplies" items={["Pen","Paper","Glue"]}/>
-                </div>
-            )
-        }
+        function Feature (props){
+            // if (props.active == true){
+            //     return <h1>This feature is active</h1>
+            // }
+            // else{
+            //     return <h1>This feature is not active</h1>
+            // }
 
+            // return <h1>This feature is {props.active?  "ON":"OFF"}</h1>
+            
+            // if (props.active ==false){
+            //     return null
+            // }
+            // return <h1>This feature is active</h1>
+
+            return props.active && <h1>This feature is active</h1>
+        }
 
         ReactDOM.render(
-            <ShoppingApp />,
+            <Feature active={true}/>,
             document.getElementById("root")
         )
         </script>

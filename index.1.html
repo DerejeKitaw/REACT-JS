@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+   <div id="root"></div>
+    <script type="text/babel">
+        //ShoppingTitle functional component
+        function ShoppingTitle(props){
+            return (
+                <div>
+                    <h1>{props.title}</h1>
+                    <h2>Total Number of Items: {props.numItems}</h2>
+                </div>
+            )
+        }
+        //ListItem functional component
+        function ListItem(props){
+            return <li>{props.item}</li>
+        }
+        //ShoppingList functional component
+        function ShoppingList(props){
+            return (
+                <div>
+                    <h3>{props.header}</h3>    
+                    <ol>
+                        <ListItem item ={props.items[0]}/>
+                        <ListItem item ={props.items[1]}/>
+                        <ListItem item ={props.items[2]}/>
+                    </ol>
+                </div>
+            )
+        }
+        //ShoppingApp functional component
+        function ShoppingApp(props){
+            return (
+                <div>
+                        <ShoppingTitle title ="My Shopping List"/>
+                        <ShoppingList header="Food" items={["Apple","Bread","Cheese"]}/>
+                        <ShoppingList header="Clothes" items={["Shirt","Pants","Hat"]}/>
+                        <ShoppingList header="Supplies" items={["Pen","Paper","Glue"]}/>
+                </div>
+            )
+        }
+
+
+        ReactDOM.render(
+            <ShoppingApp />,
+            document.getElementById("root")
+        )
+        </script>
+</body>
+</html>
+
