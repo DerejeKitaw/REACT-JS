@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,132 @@
     <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/latest/react-bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
     <title>Document</title>
 </head>
+
 <body>
-   <div id="root"></div>
+    <!-- <button class="btn btn-success">Buy Now</button> -->
+    <div id="root"></div>
+
     <script type="text/babel">
-        function HeloWorld (props){
-            return <h1>This is functional component {props.message}</h1>
+    function VehicleListItem(props){ 
+        var tables = [];
+        console.log(props.data.length);
+        console.log(props.vehicle_type);
+        console.log(props.data[0][0]);
+	    for (var i = 0; i < props.data.length; i++) {
+            if (props.vehicle_type == props.data[i][0]){
+			tables.push(
+                        <tr>
+                            <td>{props.data[i][0]}</td>
+                            <td>{props.data[i][1]}</td>
+                            <td>{props.data[i][2]}</td>
+                            <td><button>Buy Now</button></td>
+                        </tr>
+				)
+
+            }
+	    }
+        return (
+            <div>
+                <h2>{props.vehicle_type}</h2>
+                <ul>
+                    <table>
+                        <tr>
+                            <th>Year</th>
+                            <th>Model</th>
+                            <th>Price</th>
+                            <th>Buy</th>
+                        </tr>
+                        {tables}
+                    </table>
+                </ul>
+            </div>
+        )
+        } 
+            // function VehicleListItem(props){ return (
+
+            //     <ul>
+            //         <table>
+            //             <tr>
+            //                 <th>Year</th>
+            //                 <th>Model</th>
+            //                 <th>Price</th>
+            //                 <th>Buy</th>
+            //             </tr>
+            //             <tr>
+            //                 <td>{props.items[0]}</td>
+            //                 <td>{props.items[1]}</td>
+            //                 <td>${props.items[0]}</td>
+            //                 <td><button>Buy Now</button></td>
+            //             </tr>
+            //         </table>
+            //     </ul>
+            //     ) } 
+
+            // function Vehecle(props){ return (
+            //     <div>
+            //         <h2>{props.vehicle_type}</h2>
+            //         <VehicleListItem items={props.items[0]}/>
+            //         <VehicleListItem items={props.items[1]}/>
+            //         <test />
+
+            //     </div>
+            //     ) } 
+    function Vehecle(props){ return (
+        <div>
+            <VehicleListItem vehicle_type={props.vehicle_type} data={props.data}/>
+        </div>
+        ) } 
+    
+    function CheckBox(props){
+        console.log(props.value);
+        return (
+                    <div>
+                        <h2>Choose Options</h2>
+                        New Only 
+                        <input type="checkbox" id="coding" name="interest" value= {props.value}  defaultChecked = {props.checked} />
+                    </div>
+            )
         }
+    
+    function SelectType (props){
+        var option =[];
+        for (var i=0; i<props.type.length; i++){
+            option .push(
+                <option value="{props.type[i]}">{props.type[i]}</option>
+            );
+        }
+        return(
+            <div>
+			Select Type
+			<select>
+					{option}
+			</select>
+		</div>
+        )
+    }
+        function TransportationApp (props){ 
+        let data = [["car","2013","A","$32000"],["car","2011","B","$4400"],["car","2016","B","$15500"],["Trucks",2014, "D",18000],["Trucks",2013, "E",5200],["Convertibles","2009","F","$2000"],["Convertibles","2010","G","$6000"],["Convertibles","2012","H","$12500"],["Convertibles","2017","M","$50000"]];
+        let type = ["All","Cars","Trucks","Convertibles"];    
+        return (
+                <div>
+                    <h3>{props.title}</h3>
+                    <h4>{props.description}</h4>
 
-        ReactDOM.render(
-            <HeloWorld message="from message"/>,
-            document.getElementById("root")
-        );
-        </script>
+                    <CheckBox checked={true}/>
+                    <SelectType type = {type}/>
+                    <Vehecle vehicle_type="car" data={data} />
+                    <Vehecle vehicle_type="Trucks" data={data}/>
+                    <Vehecle vehicle_type="Convertibles" data={data}/> 
+                </div>
+        ) } 
+        ReactDOM.render(  
+        <TransportationApp title="Welcome to React Transportation"  description="The best place to buy vehicles online" />, document.getElementById("root") );
+</script>
 </body>
-</html>
 
+</html>
