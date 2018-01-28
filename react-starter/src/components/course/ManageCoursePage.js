@@ -8,7 +8,10 @@ import CourseForm from './CourseForm';
 export class ManageCoursePage extends React.Component {
   constructor(props, context) {
     super(props, context);
-
+    this.state = {
+        course: Object.assign({}, props.course),
+        errors: {}
+      };
   }
 
 
