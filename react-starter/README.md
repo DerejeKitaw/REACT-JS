@@ -4,3 +4,5 @@
 ```
 npm install
 ```
+
+## crate index.html file
