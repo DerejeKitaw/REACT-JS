@@ -20,14 +20,18 @@ export class ManageCoursePage extends React.Component {
     return (
         <div>
             <h1>Manage Course</h1>
-            <CourseForm course={this.state.course}/>
+            <CourseForm
+            allAuthors={[]} // empty array for now
+            course={this.state.course}
+            errors={this.state.errors}
+            />
         </div>
     );
   }
 }
 
 ManageCoursePage.propTypes = {
-
+    course: PropTypes.object.isRequired
 };
 
 //Pull in the React Router context so router is available on this.context.router.
