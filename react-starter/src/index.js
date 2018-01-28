@@ -1,1 +1,1 @@
-//console.log("index is loadded");
+console.log("index is loadded");

@@ -22,4 +22,7 @@ npm install
 ``0 means off```
 ``1 means Warning```
 ``2 means Error   -- this will break the build```
-```run: npm run lint```
+```run:---- npm run lint```
+
+```"lint:watch": "npm run lint -- --watch"``` will run the lint script above and pass watch flag to the lint
+```run:---- npm run lint:watch```
