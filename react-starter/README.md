@@ -17,3 +17,9 @@ npm install
 ```Create express server - .tools/srcServer.js```
 ```Create script --"start": "babel-node tools/srcServer.js"```
 ```app will run in http://localhost:3000/```
+
+# Set up ESLint in .eslintrc
+``0 means off```
+``1 means Warning```
+``2 means Error   -- this will break the build```
+```run: npm run lint```
