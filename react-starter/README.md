@@ -8,3 +8,5 @@ npm install
 ## crate index.html file
 
 ## Setup webpack
+
+## setup .editorconfig
