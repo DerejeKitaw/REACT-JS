@@ -10,3 +10,5 @@ npm install
 ## Setup webpack
 
 ## setup .editorconfig
+
+# Set up bable using 
