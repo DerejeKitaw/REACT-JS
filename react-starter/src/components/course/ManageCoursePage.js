@@ -13,7 +13,10 @@ export class ManageCoursePage extends React.Component {
 
   render() {
     return (
-        <h1>Manage Course</h1>
+        <div>
+            <h1>Manage Course</h1>
+            <CourseForm course={this.state.course}/>
+        </div>
     );
   }
 }
