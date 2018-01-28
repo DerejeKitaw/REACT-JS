@@ -6,7 +6,8 @@
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel lint:watch",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\""
   },
   "author": "Dereje Kitaw",
   "license": "MIT",
