@@ -26,3 +26,13 @@ npm install
 
 ```"lint:watch": "npm run lint -- --watch"``` will run the lint script above and pass watch flag to the lint
 ```run:---- npm run lint:watch```
+
+## Difference between preestart and start
+prestart runs befor start run
+```crate a start message to display befor start app```
+```"prestart": "babel-node tools/startMessage.js",```
+when npm start run --startMessage.js will run first
+
+
+
+

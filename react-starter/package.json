@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Starter kit for React and Redux",
   "scripts": {
-    "prestart": "babel-node tools/srcServer.js",
-    "start": "babel-node tools/srcServer.js",
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "npm-run-all --parallel lint:watch",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch"
   },
