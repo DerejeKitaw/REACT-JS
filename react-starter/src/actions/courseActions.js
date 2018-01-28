@@ -1,3 +1,5 @@
-export function createCourse(course) {
-    return {type: 'CREATE_COURSE', course};
-  }
+import * as types from './actionTypes';
+
+export function createCourseSuccess(course) {
+  return {type: types.CREATE_COURSE_SUCCESS, course};
+}
