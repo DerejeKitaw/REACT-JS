@@ -18,14 +18,11 @@ export class ManageCoursePage extends React.Component {
 
   render() {
     return (
-        <div>
-            <h1>Manage Course</h1>
             <CourseForm
             allAuthors={[]} // empty array for now
             course={this.state.course}
             errors={this.state.errors}
             />
-        </div>
     );
   }
 }
